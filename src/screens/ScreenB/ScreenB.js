@@ -1,16 +1,18 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 
 const ScreenB = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>Screen B</Text>
+      <Text style={{ fontSize: 18 }}>Screen A</Text>
       <StatusBar style="auto" />
-      <Button
+      <Pressable
         onPress={() => navigation.navigate("ScreenA")}
-        title="Go back to A"
-      />
+        style={styles.buttonStyle}
+      >
+        <Text style={{ fontSize: 18 }}>Back to A</Text>
+      </Pressable>
     </View>
   );
 };
@@ -23,5 +25,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  buttonStyle: {
+    width: 150,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#7f7fff",
+    borderRadius: 2,
+    marginTop: 20,
   },
 });
